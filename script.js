@@ -8,14 +8,24 @@ function setBackground(){
     $("body").css("background-image", `url(images/IMG_${randomEl}.JPG`);
 }
 
+
+/**
+ * Retrieves a quote from the API.
+ */
 function getQuote(){
     $.get("https://api.quotable.io/random", (response) => {
         console.log(response);
-        $(".quote").text(response.content);
-        $(".quote-author").text("- " + response.author);
+        $(".quote").fadeOut('slow', () => $(".quote").text(response.content));
+        $(".quote").fadeIn('slow');
+
+        $(".quote-author").fadeOut('slow', () => $(".quote-author").text("- " + response.author));
+        $(".quote-author").fadeIn('slow');
     });
 }
 
+/**
+ * Calls startup functions.
+ */
 $(document).ready(() => {
     getQuote();
     setBackground();
