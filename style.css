@@ -34,7 +34,6 @@ html {
   /** Decorative Styles **/
 
   /* Positioning */
-
   body{
       display: flex;
       flex-direction: column;
@@ -80,4 +79,39 @@ html {
       background: rgba(255, 255, 255, 0.5);
       padding: 1em;
       font-size: .7rem;
+  }
+
+  /* Media queries */
+  @media(max-width: 768px){
+      .quote-container{
+          max-width: 450px;
+      }
+
+      .quote{
+          font-size: 1.3rem;
+          line-height: 1.7;
+      }
+
+      .quote-mark{
+        height: 30px;
+    }
+  }
+
+  @media(max-width: 510px){
+    .quote-container{
+        max-width: 250px;
+    }
+
+    .quote{
+        font-size: 1rem;
+        line-height: 1;
+    }
+
+    .quote-mark{
+      height: 15px;
+    }
+
+    .quote-author{
+        font-size: .8rem;
+    }
   }
